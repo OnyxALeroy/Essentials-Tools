@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "essentials-tools"
+version = "0.1.0"
+description = "Tools to easier the development of a Pokémon Game using Pokémon Essentials."
+authors = []
+readme = "README.md"
+packages = [
+    { include = "trainer", from = "src" },
+    { include = "wild", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2"
+openpyxl = "^3.1"
+
+[tool.poetry.scripts]
+trainer = "trainer.main:main"
+wild = "wild.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
