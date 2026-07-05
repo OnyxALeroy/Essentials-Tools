@@ -1,6 +1,7 @@
 import pandas as pd
 
 from .models import Pokemon, Trainer
+from .writer import write_trainers
 
 
 def _val(v):
@@ -75,6 +76,10 @@ def main():
     print(f"=== BossBattlesRematches ({len(trainers)} trainers) ===")
     print()
     show(trainers)
+
+    outpath = "outputs/trainers.txt"
+    write_trainers(trainers, outpath)
+    print(f"Written to {outpath}")
 
 
 if __name__ == "__main__":
